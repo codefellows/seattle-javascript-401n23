@@ -25,3 +25,6 @@
   - **Anything that can accept a request and serve back an answer is a server**
   - In an app, you have clients and servers at every logical point in code
   - So ... no, Node.js is not a server, it's a tool you can use to make a server
+
+- https://www.npmjs.com/package/supertest
+- https://jestjs.io/docs/expect
