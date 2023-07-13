@@ -22,9 +22,8 @@ class Collection {
   // READ 1 or all
   // anytime you have a function that takes arguments and you don't pass them in the function will treat them as though they eval to undefined
   // dogs.read()
-  async read(id) {
-    let records = null; // if we get one record it will be an object, if we get many it will be an array
-    const options = {};
+  async read(id, options = {}) {
+    let records = null;
     try {
       if (id) {
         options.where = { id: id };
