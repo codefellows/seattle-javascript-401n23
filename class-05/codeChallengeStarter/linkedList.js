@@ -38,8 +38,21 @@ class LinkedList {
   }
 
   // insert
+  insert(value) {
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+  }
 
   // includes
+  includes(val) {
+    let current = this.head;
+    while (current) {
+      if (current.value === val) return true;
+      current = current.next;
+    }
+    return false;
+  }
 
   // toString
   // "{ a } -> { b } -> { c } -> NULL"
