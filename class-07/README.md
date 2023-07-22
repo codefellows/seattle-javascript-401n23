@@ -7,6 +7,7 @@ Using a "Bearer Token" to re-authenticate with a server following a successful l
 ## Class Outline
 
 <!-- To Be Completed By Instructor -->
+
 - Code Review
 - Warmup question
 - Lecture
@@ -18,9 +19,18 @@ Using a "Bearer Token" to re-authenticate with a server following a successful l
 #### Describe and Define
 
 - Bearer Authentication
+  - a token generated from some user info - the user is now the bearer of the token and it contains everything needed confirm their identity
+    - extra security
+    - time constraint
+    - single session
+    - etc
 - JSON Web Tokens (jwt)
+  - encoded with a secret password and holds user information. Can be decoded as long as you know the secret password
 - Web Security
+  - making things secure on the internet??
 - When to use Basic or Bearer Authentication
+  - we can store user roles in bearer to protect routes
+  -
 
 #### Execute
 
@@ -38,16 +48,19 @@ Using a "Bearer Token" to re-authenticate with a server following a successful l
 - In express servers, this can be done in middleware, in conjunction with a user model.
 
   ```javascript
-  app.get('/somethingsecret', bearerToken, (req,res) => {
-    res.status(200).send('secret sauce');
+  app.get("/somethingsecret", bearerToken, (req, res) => {
+    res.status(200).send("secret sauce");
   });
 
-  function bearerToken( req, res, next ) {
-    let token = req.headers.authorization.split(' ').pop();
+  function bearerToken(req, res, next) {
+    let token = req.headers.authorization.split(" ").pop();
     try {
-      if ( tokenIsValid(token) ) { next(); }
+      if (tokenIsValid(token)) {
+        next();
+      }
+    } catch (e) {
+      next("Invalid Token");
     }
-    catch(e) { next("Invalid Token"); }
   }
 
   function tokenIsValid(token) {
@@ -68,10 +81,10 @@ Sequelize allows "Virtual" fields on our data model. A virtual field is a proper
 For example, here's a simple data model that describes a piece of food:
 
 ```javascript
-const food = sequelize.define('Food', {
-  name: {type: DataTypes.STRING, required:true },
-  calories: {type: DataTypes.INTEGER, required:true },
-  type: {type: DataTypes.ENUM(["vegetable", "carb", "protien"]) },
+const food = sequelize.define("Food", {
+  name: { type: DataTypes.STRING, required: true },
+  calories: { type: DataTypes.INTEGER, required: true },
+  type: { type: DataTypes.ENUM(["vegetable", "carb", "protien"]) },
 });
 ```
 
@@ -92,20 +105,25 @@ For our example, let's add a new virtual field called "points" which is an arbit
 Add this to your Sequelize food schema
 
 ```javascript
-const food = sequelize.define('Food', {
-  name: {type: DataTypes.STRING, required:true },
-  calories: {type: DataTypes.INTEGER, required:true },
-  type: {type: DataTypes.ENUM(["vegetable", "carb", "protien"]) },
-  points: { // our virtual field needs a function called a `getter` which runs and uses it's return value.
+const food = sequelize.define("Food", {
+  name: { type: DataTypes.STRING, required: true },
+  calories: { type: DataTypes.INTEGER, required: true },
+  type: { type: DataTypes.ENUM(["vegetable", "carb", "protien"]) },
+  points: {
+    // our virtual field needs a function called a `getter` which runs and uses it's return value.
     type: DataTypes.VIRTUAL,
     get() {
       let points = this.calories;
-      if ( type === "carb" ) { points = this.calories * 10; }
-      else if ( type === "protien" ) { points = this.calories * .5; }
-      else if ( type === "vegetable" ) { points = this.calories * .2; }
+      if (type === "carb") {
+        points = this.calories * 10;
+      } else if (type === "protien") {
+        points = this.calories * 0.5;
+      } else if (type === "vegetable") {
+        points = this.calories * 0.2;
+      }
       return points;
-    }
-  }
+    },
+  },
 });
 ```
 
