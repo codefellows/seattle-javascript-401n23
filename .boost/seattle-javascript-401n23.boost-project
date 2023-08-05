@@ -1,0 +1,101 @@
+{
+  "dataFormatVersion": "1.2.4",
+  "summary": {
+    "projectName": "seattle-javascript-401n23",
+    "summaryUrl": ".boost/seattle-javascript-401n23.summary.boost-notebook",
+    "filesToAnalyze": 300,
+    "filesAnalyzed": 0,
+    "issues": [
+      "No summary file found at .boost/seattle-javascript-401n23.summary.boost-notebook"
+    ]
+  },
+  "sectionSummary": {
+    "archblueprintCode": {
+      "analysisType": "archblueprintCode",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "explainCode": {
+      "analysisType": "explainCode",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "flowDiagram": {
+      "analysisType": "flowDiagram",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "bugAnalysis": {
+      "analysisType": "bugAnalysis",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "bugAnalysisList": {
+      "analysisType": "bugAnalysisList",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "complianceCode": {
+      "analysisType": "complianceCode",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "complianceCodeList": {
+      "analysisType": "complianceCodeList",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    },
+    "summary": {
+      "analysisType": "summary",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    }
+  },
+  "files": {},
+  "account": {
+    "refreshed": true,
+    "enabled": false,
+    "status": "expired",
+    "trialRemaining": 0,
+    "usageThisMonth": 0,
+    "discountedUsage": 0,
+    "balanceDue": 0,
+    "couponType": "None",
+    "org": "codefellows",
+    "owner": "highlander.44@gmail.com",
+    "created": "2023-06-01",
+    "creditCardLinked": false
+  }
+}
