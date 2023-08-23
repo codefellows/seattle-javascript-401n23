@@ -83,3 +83,9 @@ You can then use some other `eb` commands to manage your apps
 You can also use GitHub Actions to auto-deploy your source code to your EB Environment whenever you check in your code.
 
 > Browse the GitHub Marketplace for actions you can import into your repo. There are many
+
+## IN-CLASS DEMO
+
+Here's the server we built and deployed during class. Start with this one for sure, but if you're feeling daring, dig up one of your old ones and try that as well.
+
+https://github.com/playpens/express-server
