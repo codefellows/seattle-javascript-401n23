@@ -1,6 +1,6 @@
 # Component Based UI
 
-## Overview 
+## Overview
 
 Component based UI systems like `React`, `Angular`, `Vue` and the like all operate on a variation of "Atomic Design", using "Components" as the means of delivery.
 
@@ -49,33 +49,22 @@ As a component based system, React does an awful lot for us, principally, it get
 ### JSX
 
 ```javascript
-const Header = ({greeting}) => {
-  return (
-    <h1 className="greeting">
-      {greeting}
-    </h1>
-  );
+const Header = ({ greeting }) => {
+  return <h1 className="greeting">{greeting}</h1>;
 };
 
 const App = () => {
-  return <Header greeting="Hello, world!" />
-} 
+  return <Header greeting="Hello, world!" />;
+};
 ```
 
 Behind the scenes...
 
 ```javascript
-const Header = ({greeting}) => 
-  React.createElement(
-    'h1',
-    {className: 'greeting'},
-    greeting
-  );
+const Header = ({ greeting }) =>
+  React.createElement("h1", { className: "greeting" }, greeting);
 
-const App = () => React.createElement(
-  Header,
-  {greeting: "Hello, world!"}
-)
+const App = () => React.createElement(Header, { greeting: "Hello, world!" });
 ```
 
 ### Basic (Basic) React
@@ -84,9 +73,9 @@ const App = () => React.createElement(
 1. An "index" that imports 'React', includes components, which returns their output into the DOM into `<div id="root"></div>`
 
    ```javascript
-   import React from 'react';
-   import ReactDOM from 'react-dom';
-   import App from './app.js';
+   import React from "react";
+   import ReactDOM from "react-dom";
+   import App from "./app.js";
 
    class Main extends React.Component {
      render() {
@@ -94,15 +83,15 @@ const App = () => React.createElement(
      }
    }
 
-   const rootElement = document.getElementById('root');
+   const rootElement = document.getElementById("root");
    ReactDOM.render(<Main />, rootElement);
    ```
 
 1. An "app" that imports other components and "renders" what they "return"
 
    ```javascript
-   import React from 'react';
-   import Content from './content.js';
+   import React from "react";
+   import Content from "./content.js";
 
    class App extends React.Component {
      render() {
@@ -117,18 +106,17 @@ const App = () => React.createElement(
    }
 
    export default App;
-
    ```
 
 1. Components that do work and render content
 
    ```javascript
-   import React from 'react';
+   import React from "react";
 
    class Content extends React.Component {
      handleClick = () => {
-       console.log('clicked');
-     }
+       console.log("clicked");
+     };
      render() {
        return (
          <div>
@@ -139,5 +127,4 @@ const App = () => React.createElement(
    }
 
    export default Content;
-
    ```

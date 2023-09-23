@@ -54,17 +54,17 @@ When writing code that connects to a Dynamo Database, you'll need to know your A
 This is just like Mongoose!
 
 ```javascript
-'use strict';
+"use strict";
 
-const dynamoose = require('dynamoose');
+const dynamoose = require("dynamoose");
 
 const friendsSchema = new dynamoose.Schema({
-  'id': String,
-  'name': String,
-  'phone': String,
+  id: String,
+  name: String,
+  phone: String,
 });
 
-module.exports = dynamoose.model('friends', friendsSchema);
+module.exports = dynamoose.model("friends", friendsSchema);
 ```
 
 #### Write your Lambda Function (or any JS) to use your schema...
@@ -74,7 +74,7 @@ module.exports = dynamoose.model('friends', friendsSchema);
 The actul schema and CRUD ops are very similar Mongoose and MongoDB
 
 ```javascript
-const contentModel = require('./friends.schema.js');
+const contentModel = require("./friends.schema.js");
 
 async function findRecord(id) {
   const content = await contentModel.query("id").eq(id).exec();
@@ -87,7 +87,6 @@ async function saveRecord(name, phone) {
   const data = await record.save();
   console.log(data);
 }
-
 ```
 
 ### Create API Endpoints
@@ -98,3 +97,5 @@ async function saveRecord(name, phone) {
 1. Connect each endpoint to the correct lambda
 
 As your routes are invoked by users, those lambda's will fire, with the `event` receiving any POST or QUERY data
+
+<!-- app.get('/hello', handleHello) -->
