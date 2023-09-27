@@ -8,7 +8,8 @@ Newer versions of React now allow for "function components" to also manage their
 
 ## Class Outline
 
-<!-- To Be Completed By Instructor -->
+- give the name of the state (variable name) and set a starting value
+- no need to use "this"
 
 ## Learning Objectives
 
@@ -56,21 +57,21 @@ How does this work?
 - You can call your setter function .. i.e. `setClicks(7)` and the attribute value you call the function with is used as the new value for the state variable.
 
 ```javascript
- import React from 'react';
- import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
- function Counter() {
-   const [clicks, setClicks] = useState(0);
+function Counter() {
+  const [clicks, setClicks] = useState(0);
 
-   return (
-     <div>
-       <h2>Button has been clicked {clicks} time(s)</h2>
-       <button type="button" onClick={() => setClicks(clicks + 1)}>
-         Update Count
-       </button>
-     </div>
-   );
- }
+  return (
+    <div>
+      <h2>Button has been clicked {clicks} time(s)</h2>
+      <button type="button" onClick={() => setClicks(clicks + 1)}>
+        Update Count
+      </button>
+    </div>
+  );
+}
 
- export default Counter;
+export default Counter;
 ```
