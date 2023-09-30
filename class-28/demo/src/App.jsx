@@ -50,7 +50,7 @@ const App = () => {
   useEffect(() => {
     // can do anything
     if (!appState.requestParams.url) return;
-    if (appState.data && Object.keys(appState.data)) return;
+    if (appState.data && Object.keys(appState.data).length) return;
     // early exit gate
     (async () => {
       // make the request
