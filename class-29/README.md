@@ -36,9 +36,9 @@ Simply put, this is a variable that describes your state before the app starts. 
 const initialState = {
   show: "Sesame Street",
   characters: [
-    {name: "Ernie", color: "orange" },
-    {name: "Burt", color: "yellow" }
-  ]
+    { name: "Ernie", color: "orange" },
+    { name: "Burt", color: "yellow" },
+  ],
 };
 ```
 
@@ -70,13 +70,17 @@ The reducer looks at the action, and based on the `type` property, it uses a `sw
 In this example, to "add" a character, we spread out state (makes a copy) and further spread out the characters and append one. Can you describe how "remove" works?
 
 ```javascript
-function characterReducer( state=initialState, action ) {
-
-  switch( action.type ) {
-    case 'ADD_CHARACTER':
+function characterReducer(state = initialState, action) {
+  switch (action.type) {
+    case "ADD_CHARACTER":
       return { ...state, characters: [...state.characters, action.payload] };
-    case 'REMOVE_CHARACTER':
-      return {...state, characters: state.characters.filter( char => char.name !== payload.name ) }
+    case "REMOVE_CHARACTER":
+      return {
+        ...state,
+        characters: state.characters.filter(
+          (char) => char.name !== payload.name
+        ),
+      };
     default:
       return state;
   }
@@ -92,25 +96,22 @@ You might think that running something like this would do it `let newState =  re
 Technically, that's what needs to happen, but you don't have permission to do that in react. Rather, we **dispatch the action** we want to run, using the `useReducer()` hook and "dispatch" the action you want to run. React knows how to hook it all together and update the component's state.
 
 ```javascript
-  function myComponent(props) {
+function myComponent(props) {
+  // This identifies your reducer function and "runs it" the first time, using your initial state
+  const [state, dispatch] = useReducer(characterReducer, initialState);
 
-    // This identifies your reducer function and "runs it" the first time, using your initial state
-    const [state, dispatch] = useReducer(characterReducer, initialState);
+  // Later, when you want to add
+  function addCharacter() {
+    const character = { name: "Elmo", color: "red" };
 
-    // Later, when you want to add
-    function addCharacter() {
+    // What we want the reducer to do ....
+    const action = {
+      type: "ADD_CHARACTER",
+      payload: character,
+    };
 
-      const character = { name: "Elmo", color: "red" };
-
-      // What we want the reducer to do ....
-      const action = {
-        type: "ADD_CHARACTER",
-        payload: character
-      };
-
-      // Make the reducer do it ...
-      dispatch(action);
-    }
+    // Make the reducer do it ...
+    dispatch(action);
   }
-
+}
 ```
