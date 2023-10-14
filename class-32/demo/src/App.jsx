@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 import { darkMode } from "./themes/darkMode";
 import { lightMode } from "./themes/lightMode";
 import Todo from "./Components/Todo";
@@ -32,6 +33,7 @@ const App = () => {
       }}
     >
       <ThemeProvider theme={appTheme === "light" ? lightMode : darkMode}>
+        <CssBaseline />
         <Todo />
       </ThemeProvider>
     </GlobalContext.Provider>
