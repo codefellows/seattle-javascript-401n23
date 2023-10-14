@@ -1,0 +1,30 @@
+[
+  {
+    "difficulty": 4,
+    "text": "clean room",
+    "assignee": "sara",
+    "id": "9b8ef736-3984-4911-8068-9d6141df115e",
+    "complete": false
+  },
+  {
+    "difficulty": 4,
+    "text": "take a bath",
+    "assignee": "indiana",
+    "id": "63a6d942-ca3f-4c43-9428-8c27e0fd43da",
+    "complete": false
+  },
+  {
+    "difficulty": 4,
+    "text": "amanda",
+    "assignee": "do homework",
+    "id": "e53588e0-7436-4add-8447-8a35208e0d3a",
+    "complete": false
+  },
+  {
+    "difficulty": 4,
+    "text": "stop barking",
+    "assignee": "mj",
+    "id": "76c64dbc-79b3-461a-88d3-7b6c1431ea66",
+    "complete": false
+  }
+]
