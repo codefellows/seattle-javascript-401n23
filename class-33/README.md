@@ -42,6 +42,7 @@ What problems do we need to solve for?
 #### `Authorization` Context
 
 - User State
+
   - `loggedIn` (boolean)
   - `user` (object representing the user)
 
