@@ -56,9 +56,10 @@ class Graph {
   // Empty collection returned if there are no vertices
   getVerticies() {
     const vertexArray = [];
-    this.adjacencyList.forEach((_, key) => vertexArray.push(key.value));
+    this.adjacencyList.forEach((_, key) => vertexArray.push(key));
     return vertexArray;
   }
+
   // get neighbors
   // Arguments: vertex
   // Returns a collection of edges connected to the given vertex
